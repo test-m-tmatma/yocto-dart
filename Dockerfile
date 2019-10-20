@@ -29,3 +29,11 @@ RUN useradd -m ${USER}
 RUN gpasswd -a ${USER} sudo
 RUN echo "${USER}:yocto" | chpasswd
 
+ENV REPODIR /usr/bin
+ENV REPO    ${REPODIR}/repo
+
+RUN mkdir -p ${REPODIR} \
+ && curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ${REPO} \
+ && chmod a+x ${REPO}
+ENV PATH ${REPODIR}:$PATH
+
