@@ -8,5 +8,6 @@ DOCKER_OPT=$SCRIPT_DIR/opt
 TARGET_OPT=/opt
 
 mkdir -p $DOCKER_OPT
-sudo docker run -it -u yocto:yocto -v $DOCKER_OPT:$TARGET_OPT -v $DOCKER_HOME:$TARGET_HOME -w $TARGET_HOME yocto-dart:latest /bin/bash
+sudo docker run -u yocto:yocto -v $DOCKER_OPT:$TARGET_OPT -v $DOCKER_HOME:$TARGET_HOME -w $TARGET_HOME yocto-dart:latest $TARGET_HOME/build-yocto.sh
+
 
