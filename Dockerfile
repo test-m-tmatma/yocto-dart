@@ -37,3 +37,11 @@ RUN mkdir -p ${REPODIR} \
  && chmod a+x ${REPO}
 ENV PATH ${REPODIR}:$PATH
 
+
+######################################################################################
+#
+######################################################################################
+LABEL description=yocto-dart
+LABEL giturl=https://github.com/m-tmatma/yocto-dart.git
+LABEL version=1
+
