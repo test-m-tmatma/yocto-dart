@@ -1,0 +1,8 @@
+.bash_history
+.wget-hsts
+bin/
+docker-home/.bash_history
+docker-home/.python-history
+docker-home/.subversion/
+docker-home/.wget-hsts
+docker-home/var-fslc-yocto/
