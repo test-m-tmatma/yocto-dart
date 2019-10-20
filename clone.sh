@@ -4,7 +4,7 @@ BRANCHNAME=thud
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 # Top dir of source
-YOCTO_FSLC_DIR=$SCRIPT_DIR/var-fslc-yocto
+YOCTO_FSLC_DIR=$SCRIPT_DIR/docker-home/var-fslc-yocto
 
 # 'repo' command
 REPO_DIR=$SCRIPT_DIR/bin
