@@ -1,6 +1,7 @@
 .bash_history
 .wget-hsts
 bin/
+opt/
 docker-home/.bash_history
 docker-home/.python-history
 docker-home/.subversion/
