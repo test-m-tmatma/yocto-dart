@@ -6,6 +6,7 @@ services:
     restart: always
     volumes:
       - ./docker-home:/home/yocto
+      - ./opt:/opt
 
 volumes:
   yocto:
