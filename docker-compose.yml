@@ -1,0 +1,13 @@
+version: '2'
+services:
+  yocto:
+    build: ./docker-conf
+    container_name: yocto
+    restart: always
+    volumes:
+      - ./docker-home:/home/yocto
+
+volumes:
+  yocto:
+    driver: local
+
