@@ -5,8 +5,8 @@ services:
     container_name: yocto
     restart: always
     volumes:
-      - ./docker-home:/home/yocto
-      - ./opt:/opt
+      - ./container/yocto:/home/yocto
+      - ./container/opt:/opt
 
 volumes:
   yocto:
