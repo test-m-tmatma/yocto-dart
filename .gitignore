@@ -1,9 +1,9 @@
 .bash_history
 .wget-hsts
 bin/
-opt/
-docker-home/.bash_history
-docker-home/.python-history
-docker-home/.subversion/
-docker-home/.wget-hsts
-docker-home/var-fslc-yocto/
+container/opt/
+container/yocto/.bash_history
+container/yocto/.python-history
+container/yocto/.subversion/
+container/yocto/.wget-hsts
+container/yocto/var-fslc-yocto/
