@@ -1,9 +1,12 @@
 .bash_history
 .wget-hsts
 bin/
+nohup.out
 container/opt/
-container/yocto/.bash_history
-container/yocto/.python-history
-container/yocto/.subversion/
-container/yocto/.wget-hsts
-container/yocto/var-fslc-yocto/
+container/home/yocto/.bash_history
+container/home/yocto/.python-history
+container/home/yocto/.subversion/
+container/home/yocto/.wget-hsts
+container/home/yocto/var-fslc-yocto/
+container/home/yocto/downloads/
+

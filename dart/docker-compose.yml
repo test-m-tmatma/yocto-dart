@@ -5,7 +5,7 @@ services:
     container_name: yocto
     restart: always
     volumes:
-      - ./container/yocto:/home/yocto
+      - ./container/home/yocto:/home/yocto
       - ./container/opt:/opt
 
 volumes:

@@ -1,7 +1,7 @@
 #!/bin/sh -e
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
-DOCKER_HOME=$SCRIPT_DIR/container/yocto
+DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
 TARGET_HOME=/home/yocto
 
 DOCKER_OPT=$SCRIPT_DIR/container/opt
