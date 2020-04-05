@@ -9,7 +9,7 @@ TARGET_OPT=/opt
 
 mkdir -p $DOCKER_HOME
 mkdir -p $DOCKER_OPT
-sudo docker-compose build
-sudo docker-compose run  -w $TARGET_HOME -u yocto yocto /bin/bash
+docker-compose build
+docker-compose run  -w $TARGET_HOME -u yocto yocto /bin/bash
 
 
