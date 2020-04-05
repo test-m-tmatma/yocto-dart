@@ -10,7 +10,7 @@ TARGET_OPT=/opt
 mkdir -p $DOCKER_HOME
 mkdir -p $DOCKER_OPT
 
-sudo docker-compose build
-sudo docker-compose run --rm -w $TARGET_HOME -u yocto yocto $TARGET_HOME/build-yocto.sh
+docker-compose build
+docker-compose run --rm -w $TARGET_HOME -u yocto yocto $TARGET_HOME/build-yocto.sh
 
 
