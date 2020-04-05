@@ -4,7 +4,7 @@ BRANCHNAME=thud
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 # Top dir of source
-DOCKER_HOME=$SCRIPT_DIR/container/yocto
+DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
 YOCTO_FSLC_DIR=$DOCKER_HOME/var-fslc-yocto
 
 # 'repo' command
