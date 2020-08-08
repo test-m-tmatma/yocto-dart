@@ -25,3 +25,5 @@ sudo systemctl start  docker
 sudo systemctl enable docker
 
 sudo apt install -y docker-compose
+sudo usermod -aG docker $USER
+
