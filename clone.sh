@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-BRANCHNAME=thud
+BRANCHNAME=fsl-zeus
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 # Top dir of source
