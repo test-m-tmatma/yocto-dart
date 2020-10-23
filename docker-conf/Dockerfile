@@ -10,6 +10,7 @@ RUN apt-get update && apt-get autoremove --purge -y \
      help2man make gcc g++ desktop-file-utils libgl1-mesa-dev libglu1-mesa-dev \
      mercurial automake groff curl lzop asciidoc u-boot-tools dos2unix mtd-utils pv \
      libncurses5 libncurses5-dev libncursesw5-dev libelf-dev zlib1g-dev bc \
+     rsync \
      sudo \
      tmux \
      locales \
