@@ -1,7 +1,7 @@
-.bash_history
 .wget-hsts
+*.bak
+.bash_history
 bin/
-nohup.out
 container/opt/
 container/home/yocto/.bash_history
 container/home/yocto/.python-history
@@ -9,4 +9,4 @@ container/home/yocto/.subversion/
 container/home/yocto/.wget-hsts
 container/home/yocto/var-fslc-yocto/
 container/home/yocto/downloads/
-
+nohup.out*
