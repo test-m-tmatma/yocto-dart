@@ -18,6 +18,8 @@ cd $SCRIPT_DIR/var-fsl-yocto
 MACHINE=imx6ul-var-dart DISTRO=fsl-imx-fb . var-setup-release.sh -b build_fb
 #MACHINE=imx6ul-var-dart DISTRO=fsl-framebuffer . var-setup-release.sh build_fb
 
+cp -f $SCRIPT_DIR/site.conf ./conf/
+
 bitbake meta-toolchain $BITBAKE_ARG
 
 if [ "$RUN_INSTALL_TOOLCHAIN" = "y" ]; then
