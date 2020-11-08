@@ -1,7 +1,6 @@
 FROM ubuntu:16.04
 ENV DEBIAN_FRONTEND noninteractive
-RUN sed -i.bak -r 's!(deb|deb-src) \S+!\1 mirror://mirrors.ubuntu.com/mirrors.txt!' /etc/apt/sources.list \
- && apt-get update && apt-get dist-upgrade -y && apt-get autoremove --purge -y \
+RUN apt-get update && apt-get autoremove --purge -y \
  && apt-get install -y \
      gawk wget git-core diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
@@ -13,7 +12,8 @@ RUN sed -i.bak -r 's!(deb|deb-src) \S+!\1 mirror://mirrors.ubuntu.com/mirrors.tx
      help2man make gcc g++ desktop-file-utils libgl1-mesa-dev libglu1-mesa-dev \
      mercurial automake groff curl lzop asciidoc u-boot-tools dos2unix mtd-utils pv \
      libncurses5 libncurses5-dev libncursesw5-dev libelf-dev zlib1g-dev \
- && apt-get install -y sudo \
+     sudo \
+     tmux \
  && rm -rf /var/lib/apt/lists/*
 
 # Locales
