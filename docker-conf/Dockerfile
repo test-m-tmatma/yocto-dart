@@ -1,7 +1,6 @@
 FROM ubuntu:16.04
 ENV DEBIAN_FRONTEND noninteractive
-RUN sed -i.bak -r 's!(deb|deb-src) \S+!\1 mirror://mirrors.ubuntu.com/mirrors.txt!' /etc/apt/sources.list \
- && apt-get update && apt-get autoremove --purge -y \
+RUN apt-get update && apt-get autoremove --purge -y \
  && apt-get install -y \
      gawk wget git-core diffstat unzip texinfo gcc-multilib \
      build-essential chrpath socat cpio python python3 python3-pip python3-pexpect \
