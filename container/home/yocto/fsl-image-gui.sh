@@ -17,4 +17,7 @@ cat ${ADDCONF} >> conf/local.conf
 #./tmp/deploy/sdk/fsl-imx-fb-glibc-x86_64-meta-toolchain-cortexa7t2hf-neon-toolchain-5.4-zeus.sh -y
 
 #bitbake core-image-minimal
+bitbake -e fsl-image-gui > ${SCRIPT_DIR}/dep.txt
 bitbake -DDD -f fsl-image-gui -c rootfs > ${SCRIPT_DIR}/bitbakelog.txt
+find tmp/work/imx6ul_var_dart-poky-linux-gnueabi/fsl-image-gui/1.0-r0/rootfs > ${SCRIPT_DIR}/rootfs.txt
+
