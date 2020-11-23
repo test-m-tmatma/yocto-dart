@@ -14,6 +14,9 @@ docker run -it \
     -u yocto:yocto \
     -v $DOCKER_OPT:$TARGET_OPT \
     -v $DOCKER_HOME:$TARGET_HOME \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -v $HOME/.Xauthority:$TARGET_HOME/.Xauthority \
+    -e DISPLAY=unix${DISPLAY} \
     -w $TARGET_HOME \
     yocto-dart-zeus:latest \
     /bin/bash
