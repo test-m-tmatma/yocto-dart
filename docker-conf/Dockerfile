@@ -39,6 +39,7 @@ RUN mkdir -p ${REPODIR} \
  && chmod a+x ${REPO}
 ENV PATH ${REPODIR}:$PATH
 
+RUN apt-get update && apt-get install -y  bash-completion
 
 ######################################################################################
 #
