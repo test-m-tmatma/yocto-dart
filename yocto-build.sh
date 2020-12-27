@@ -19,6 +19,6 @@ docker run --rm -u yocto:yocto \
 	-v $DOCKER_OPT:$TARGET_OPT \
 	-v $DOWNLOADS:$TARGET_HOME/downloads \
 	-v $DOCKER_HOME:$TARGET_HOME \
-	-w $TARGET_HOME yocto-dart $TARGET_HOME/build-yocto.sh
+	-w $TARGET_HOME yocto-dart-zeus $TARGET_HOME/build-yocto.sh
 
 

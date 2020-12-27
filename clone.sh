@@ -1,11 +1,11 @@
 #!/bin/bash -e
 
-BRANCHNAME=thud
+BRANCHNAME=fsl-zeus
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
 # Top dir of source
 DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
-YOCTO_FSLC_DIR=$DOCKER_HOME/var-fslc-yocto
+YOCTO_FSLC_DIR=$DOCKER_HOME/var-fsl-yocto
 
 # 'repo' command
 REPO_DIR=$SCRIPT_DIR/bin
