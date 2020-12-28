@@ -4,7 +4,7 @@ SCRIPT_DIR=$(cd $(dirname $0); pwd)
 DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
 TARGET_HOME=/home/yocto
 
-DOCKER_OPT=$SCRIPT_DIR/opt
+DOCKER_OPT=$SCRIPT_DIR/container/opt
 TARGET_OPT=/opt
 
 mkdir -p $DOCKER_HOME
