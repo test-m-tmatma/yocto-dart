@@ -21,4 +21,4 @@ mkdir -p $YOCTO_FSLC_DIR
 cd $YOCTO_FSLC_DIR
 
 repo init -u https://github.com/varigit/variscite-bsp-platform.git -b $BRANCHNAME
-repo sync -j4
+repo sync -j$(nproc --all)
