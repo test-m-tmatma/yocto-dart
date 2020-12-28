@@ -3,6 +3,7 @@
 pipeline  {
 	environment {
 		clone_sh = 'clone.sh'
+		build_sh = 'yocto-build.sh'
 	}
 	agent any
 	stages {
@@ -21,6 +22,13 @@ pipeline  {
 			steps {
 				script {
 					sh ("${env.WORKSPACE}/${clone_sh}")
+				}
+			}
+		}
+		stage('build') {
+			steps {
+				script {
+					sh ("${env.WORKSPACE}/${build_sh}")
 				}
 			}
 		}
