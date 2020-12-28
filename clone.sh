@@ -20,5 +20,5 @@ PATH=${REPO_DIR}:$PATH
 mkdir -p $YOCTO_FSLC_DIR
 cd $YOCTO_FSLC_DIR
 
-repo init -u https://github.com/varigit/variscite-bsp-platform.git -b $BRANCHNAME
-repo sync -j$(nproc --all)
+$REPO init -u https://github.com/varigit/variscite-bsp-platform.git -b $BRANCHNAME
+$REPO sync -j$(nproc --all)
