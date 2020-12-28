@@ -7,6 +7,9 @@ pipeline  {
 		build_sh = 'yocto-build.sh'
 	}
 	agent any
+	triggers {
+		pollSCM('*/5 * * * *')
+	}
 	stages {
 		stage('Checkout') {
 			steps {
