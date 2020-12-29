@@ -12,8 +12,9 @@ HOST_DOCKER_OPT=$SCRIPT_DIR/container/opt
 TARGET_OPT=/opt
 
 mkdir -p $HOST_DOCKER_HOME
-mkdir -p $DOCKER_OPT
+mkdir -p $HOST_DOCKER_OPT
 mkdir -p $DOWNLOADS
+
 docker run --rm -u yocto:yocto \
         --name $CONTAINER_NAME \
 	-v $HOST_DOCKER_OPT:$TARGET_OPT \
