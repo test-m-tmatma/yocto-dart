@@ -2,7 +2,7 @@
 
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 HOST_DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
-DOWNLOADS=${1:-$SCRIPT_DIR/container/home/yocto/downloads}
+HOST_DL_DIR=$SCRIPT_DIR/container/home/yocto/downloads
 TARGET_HOME=/home/yocto
 REMOTE_URL=$(git remote get-url origin)
 BRANCH_NAME=$(git name-rev --name-only HEAD | sed "s/\W/_/g")
@@ -13,12 +13,12 @@ TARGET_OPT=/opt
 
 mkdir -p $HOST_DOCKER_HOME
 mkdir -p $HOST_DOCKER_OPT
-mkdir -p $DOWNLOADS
+mkdir -p $HOST_DL_DIR
 
 docker run --rm -u yocto:yocto \
         --name $CONTAINER_NAME \
 	-v $HOST_DOCKER_OPT:$TARGET_OPT \
-	-v $DOWNLOADS:$TARGET_HOME/downloads \
+	-v $HOST_DL_DIR:$TARGET_HOME/downloads \
 	-v $HOST_DOCKER_HOME:$TARGET_HOME \
 	-w $TARGET_HOME yocto-dart-zeus $TARGET_HOME/build-yocto.sh
 
