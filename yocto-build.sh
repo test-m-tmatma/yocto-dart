@@ -1,6 +1,8 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
-SCRIPT_DIR=$(cd $(dirname $0); pwd)
+SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+source ${SCRIPT_DIR}/common-variable.sh
+
 HOST_DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
 TARGET_HOME=/home/yocto
 
@@ -27,6 +29,6 @@ docker run --rm -u yocto:yocto \
 	-v $HOST_DOCKER_OPT:$TARGET_OPT \
 	-v $HOST_DL_DIR:$TARGET_DL_DIR \
 	-v $HOST_DOCKER_HOME:$TARGET_HOME \
-	-w $TARGET_HOME yocto-dart-zeus $TARGET_HOME/build-yocto.sh
+	-w $TARGET_HOME $DOCKERIMAGE $TARGET_HOME/build-yocto.sh
 
 
