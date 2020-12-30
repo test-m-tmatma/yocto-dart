@@ -1,11 +1,10 @@
-#!/bin/sh -e
+#!/bin/bash -e
 
-SCRIPT_DIR=$(cd $(dirname $0); pwd)
+SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+source ${SCRIPT_DIR}/common-variable.sh
+
 HOST_DOCKER_HOME=$SCRIPT_DIR/container/home/yocto
 TARGET_HOME=/home/yocto
-VERSION=1
-DOCKERFILE_MD5=$(md5sum docker-conf/Dockerfile | awk '{ print $1 }')
-DOCKERIMAGE=yocto-dart-zeus:$VERSION-$DOCKERFILE_MD5
 
 REMOTE_URL=$(git remote get-url origin)
 BRANCH_NAME=$(git name-rev --name-only HEAD | sed "s/\W/_/g")
