@@ -9,4 +9,4 @@ if [ -e $LOGFILE ]; then
 fi
 
 rm -f $LOGFILE
-nohup $SCRIPT_DIR/yocto-build.sh $1 &
+nohup $SCRIPT_DIR/yocto-shell.sh build &
