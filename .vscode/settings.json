@@ -4,6 +4,7 @@
         "**/.bashrc": true,
         "**/.python-history": true,
         "**/.repo": true,
+        "**/.subversion": true,
         "**/build_fb": true,
         "**/nohup*": true,
         "bin/repo": true
