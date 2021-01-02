@@ -13,8 +13,8 @@ CONTAINER_NAME=$(basename $REMOTE_URL)--${BRANCH_NAME}--$(basename $SCRIPT_DIR)_
 HOST_DOCKER_OPT=$SCRIPT_DIR/container/opt
 TARGET_OPT=/opt
 
-HOST_SSTATE_DIR=$HOME/shared/sstate-cache
-HOST_DL_DIR=$HOME/shared/downloads
+HOST_SSTATE_DIR=$HOME/shared/$IMAGEBASE/sstate-cache
+HOST_DL_DIR=$HOME/shared/$IMAGEBASE/downloads
 TARGET_SSTATE_DIR=/home/shared/sstate-cache
 TARGET_DL_DIR=/home/shared/downloads
 
