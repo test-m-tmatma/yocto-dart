@@ -9,5 +9,6 @@
         "**/nohup*": true,
         "bin/repo": true
     },
-    "editor.renderWhitespace": "all"
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true
 }
