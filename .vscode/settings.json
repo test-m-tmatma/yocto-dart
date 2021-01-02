@@ -10,5 +10,6 @@
         "bin/repo": true
     },
     "editor.renderWhitespace": "all",
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
 }
