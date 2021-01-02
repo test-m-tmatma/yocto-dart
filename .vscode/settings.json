@@ -8,5 +8,6 @@
         "**/build_fb": true,
         "**/nohup*": true,
         "bin/repo": true
-    }
+    },
+    "editor.renderWhitespace": "all"
 }
