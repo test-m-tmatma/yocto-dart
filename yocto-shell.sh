@@ -26,8 +26,10 @@ mkdir -p $HOST_DL_DIR
 COMMAND_ARG=$1
 if [ x$COMMAND_ARG = x"build" ] ; then
 	COMMAND_LINE=$TARGET_HOME/build-yocto.sh
+	ADDITIONAL_OPT=
 elif [ x$COMMAND_ARG = x"shell" ] ; then
 	COMMAND_LINE=/bin/bash
+	ADDITIONAL_OPT=-it
 else
 	echo usage:
 	echo $0 build
@@ -35,7 +37,7 @@ else
 	exit 0
 fi
 
-docker run -it --rm -u yocto:yocto \
+docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
 	--name $CONTAINER_NAME \
 	-v $HOST_SSTATE_DIR:$TARGET_SSTATE_DIR \
 	-v $HOST_DOCKER_OPT:$TARGET_OPT \
