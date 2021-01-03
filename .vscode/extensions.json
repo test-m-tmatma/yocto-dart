@@ -8,6 +8,7 @@
         "emilast.logfilehighlighter",
         "knisterpeter.vscode-github",
         "ms-python.python",
-        "kevinrose.vsc-python-indent"
+        "kevinrose.vsc-python-indent",
+        "streetsidesoftware.code-spell-checker"
     ]
 }
