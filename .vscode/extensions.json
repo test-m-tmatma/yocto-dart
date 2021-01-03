@@ -11,6 +11,7 @@
         "kevinrose.vsc-python-indent",
         "streetsidesoftware.code-spell-checker",
         "mhutchie.git-graph",
-        "eugenwiens.bitbake"
+        "eugenwiens.bitbake",
+        "wraith13.bracket-lens"
     ]
 }
