@@ -9,6 +9,7 @@
         "knisterpeter.vscode-github",
         "ms-python.python",
         "kevinrose.vsc-python-indent",
-        "streetsidesoftware.code-spell-checker"
+        "streetsidesoftware.code-spell-checker",
+        "mhutchie.git-graph"
     ]
 }
