@@ -1,0 +1,16 @@
+{
+    "files.exclude": {
+        "**/.bash_history": true,
+        "**/.bashrc": true,
+        "**/.python-history": true,
+        "**/.repo": true,
+        "**/.subversion": true,
+        "**/build_fb": true,
+        "**/nohup*": true,
+        "bin/repo": true
+    },
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "bracketLens.mode": "auto"
+}

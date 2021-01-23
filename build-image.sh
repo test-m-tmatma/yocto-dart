@@ -1,5 +1,6 @@
-#!/bin/sh
-SCRIPT_DIR=$(cd $(dirname $0); pwd)
+#!/bin/bash -e
+SCRIPT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
+source ${SCRIPT_DIR}/common-variable.sh
 
-docker build -t yocto-dart-zeus:latest $SCRIPT_DIR/docker-conf
+docker build -t $DOCKERIMAGE $SCRIPT_DIR/docker-conf
 
