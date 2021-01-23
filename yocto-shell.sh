@@ -39,17 +39,27 @@ elif [ x$COMMAND_ARG = x"shell" ] ; then
 	COMMAND_LINE=/bin/bash
 	ADDITIONAL_OPT=-it
 
-	xhost +local:
-	docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
-		--name $CONTAINER_NAME \
-		-v $HOST_SSTATE_DIR:$TARGET_SSTATE_DIR \
-		-v $HOST_DOCKER_OPT:$TARGET_OPT \
-		-v $HOST_DL_DIR:$TARGET_DL_DIR \
-		-v $HOST_DOCKER_HOME:$TARGET_HOME \
-		-e DISPLAY=unix${DISPLAY} \
-		-v /tmp/.X11-unix:/tmp/.X11-unix \
-		-v $HOME/.Xauthority:/root/.Xauthority \
-		-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
+	if [ x$DISPLAY = x'' ] ; then
+		docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
+			--name $CONTAINER_NAME \
+			-v $HOST_SSTATE_DIR:$TARGET_SSTATE_DIR \
+			-v $HOST_DOCKER_OPT:$TARGET_OPT \
+			-v $HOST_DL_DIR:$TARGET_DL_DIR \
+			-v $HOST_DOCKER_HOME:$TARGET_HOME \
+			-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
+	else
+		xhost +local:
+		docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
+			--name $CONTAINER_NAME \
+			-v $HOST_SSTATE_DIR:$TARGET_SSTATE_DIR \
+			-v $HOST_DOCKER_OPT:$TARGET_OPT \
+			-v $HOST_DL_DIR:$TARGET_DL_DIR \
+			-v $HOST_DOCKER_HOME:$TARGET_HOME \
+			-e DISPLAY=unix${DISPLAY} \
+			-v /tmp/.X11-unix:/tmp/.X11-unix \
+			-v $HOME/.Xauthority:/root/.Xauthority \
+			-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
+	fi
 else
 	echo usage:
 	echo $0 build
