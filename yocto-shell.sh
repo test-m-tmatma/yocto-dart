@@ -27,20 +27,32 @@ COMMAND_ARG=$1
 if [ x$COMMAND_ARG = x"build" ] ; then
 	COMMAND_LINE=$TARGET_HOME/build-yocto.sh
 	ADDITIONAL_OPT=
+
+	docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
+		--name $CONTAINER_NAME \
+		-v $HOST_SSTATE_DIR:$TARGET_SSTATE_DIR \
+		-v $HOST_DOCKER_OPT:$TARGET_OPT \
+		-v $HOST_DL_DIR:$TARGET_DL_DIR \
+		-v $HOST_DOCKER_HOME:$TARGET_HOME \
+		-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
 elif [ x$COMMAND_ARG = x"shell" ] ; then
 	COMMAND_LINE=/bin/bash
 	ADDITIONAL_OPT=-it
+
+	xhost +local:
+	docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
+		--name $CONTAINER_NAME \
+		-v $HOST_SSTATE_DIR:$TARGET_SSTATE_DIR \
+		-v $HOST_DOCKER_OPT:$TARGET_OPT \
+		-v $HOST_DL_DIR:$TARGET_DL_DIR \
+		-v $HOST_DOCKER_HOME:$TARGET_HOME \
+		-e DISPLAY=unix${DISPLAY} \
+		-v /tmp/.X11-unix:/tmp/.X11-unix \
+		-v $HOME/.Xauthority:/root/.Xauthority \
+		-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
 else
 	echo usage:
 	echo $0 build
 	echo $0 shell
 	exit 0
 fi
-
-docker run $ADDITIONAL_OPT --rm -u yocto:yocto \
-	--name $CONTAINER_NAME \
-	-v $HOST_SSTATE_DIR:$TARGET_SSTATE_DIR \
-	-v $HOST_DOCKER_OPT:$TARGET_OPT \
-	-v $HOST_DL_DIR:$TARGET_DL_DIR \
-	-v $HOST_DOCKER_HOME:$TARGET_HOME \
-	-w $TARGET_HOME $DOCKERIMAGE $COMMAND_LINE
